@@ -1,15 +1,19 @@
 class User < ActiveRecord::Base
+  has_many :projects, :as => :author
+  has_many :use_cases, :as => :author
+  has_many :tasks, :as => :author
+  has_many :tasks, :as => :owner
+  has_many :comments, :as => :author
+
   attr_accessible :username, :email, :password, :password_confirmation
   attr_accessor :password
+
   before_save :encrypt_password
 
-  validates_presence_of :username
-  validates_uniqueness_of :username
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  validates_presence_of :username, :email
+  validates_uniqueness_of :username, :email
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
-
 
   def encrypt_password
     if password.present?
