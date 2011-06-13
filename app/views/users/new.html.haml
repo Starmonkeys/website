@@ -8,6 +8,10 @@
         - for message in @user.errors.full_messages
           %li= message
   %p
+    = f.label :username
+    %br
+    = f.text_field :username
+  %p
     = f.label :email
     %br
     = f.text_field :email
@@ -17,5 +21,6 @@
     = f.password_field :password
   %p
     = f.label :password_confirmation
+    %br
     = f.password_field :password_confirmation
   %p.button= f.submit

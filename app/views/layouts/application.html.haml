@@ -1,7 +1,7 @@
 !!!
 %html
 %head
-  %title Auth
+  %title Starmonkeys
   = stylesheet_link_tag :all
   = javascript_include_tag :defaults
   = csrf_meta_tag
@@ -12,7 +12,7 @@
 
   #user_nave
     - if current_user
-      Logged in as #{current_user.email}
+      Logged in as #{current_user.username}
       = link_to "Log out", log_out_path
     - else
       = link_to "Sign up", sign_up_path
