@@ -7,16 +7,18 @@
   = csrf_meta_tag
 
 %body
-  - flash.each do |name, msg|
-    = content_tag :div, msg, :id => "flash#{name}"
+  = link_to(image_tag('starmonkeycrafts-5.gif', :id => 'logo', :size => '125x125'), projects_path)
 
   #user_nave
     - if current_user
       Logged in as #{link_to(current_user.username, edit_user_path(current_user))}
-      = link_to "Log out", log_out_path
+      %b= link_to "Log out", log_out_path
     - else
-      = link_to "Sign up", sign_up_path
+      %b= link_to "Sign up", sign_up_path
       or
-      = link_to "Log in", log_in_path
+      %b= link_to "Log in", log_in_path
+  %br
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :id => "flash#{name}"
 
 = yield

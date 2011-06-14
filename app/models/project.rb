@@ -5,6 +5,6 @@ class Project < ActiveRecord::Base
   has_many :use_cases
   has_many :comments, :as => :commentable
 
-  validates_presence_of :title
-  validates_uniqueness_of :title
+  validates_presence_of :title, :author
+  validates_uniqueness_of :title, :case_sensitive => false
 end

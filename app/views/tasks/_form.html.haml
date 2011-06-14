@@ -1,0 +1,24 @@
+- form_for([@project, @task]) do |f|
+  - if @task.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - @task.errors.full_messages.each do |message|
+          %li= message
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :where_in_the_code
+    %br
+    = f.text_field :location
+  %p
+    = f.label :difficulty
+    %br
+    = f.select :difficulty, 1..10
+  %p.button= f.submit

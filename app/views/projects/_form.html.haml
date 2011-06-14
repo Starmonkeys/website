@@ -1,0 +1,22 @@
+%h1 New Project
+
+= form_for @project do |f|
+  - if @project.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - @project.errors.full_messages.each do |message|
+          %li= message
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :repo_link
+    %br
+    = f.text_field :link
+  %p.button= f.submit
