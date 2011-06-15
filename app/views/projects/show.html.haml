@@ -5,4 +5,4 @@
 %h3= link_to('New Task', new_project_task_path(@project))
 %ul
   - @project.tasks.each do |task|
-    %li= link_to(task.title, edit_project_task_path(@project, task))
+    %li= link_to(task.title, project_task_path(@project, task))
