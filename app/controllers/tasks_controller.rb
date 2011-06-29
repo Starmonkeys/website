@@ -26,10 +26,12 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @project = @task.taskable
     redirect_to tasks_path unless @task.author == current_user
   end
 
   def show
     @task = Task.find(params[:id])
+    @project = @task.taskable
   end
 end
