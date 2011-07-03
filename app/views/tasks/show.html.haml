@@ -1,8 +1,8 @@
-%h1= @task.taskable.title
+%h1= @task.project.title
 
 %h2= @task.title
 %h3= @task.description
 %p difficulty: #{@task.difficulty}
 %hr
-%h3= link_to('Edit Task', edit_project_task_path(@task.taskable))
+%h3= link_to('Edit Task', edit_project_task_path(@task.project))
 
