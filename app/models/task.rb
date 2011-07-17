@@ -15,7 +15,7 @@ class Task < ActiveRecord::Base
   validates_presence_of :title, :project
   validates_inclusion_of :status_id, :in => STATUS_CODES.values
 
-  scope :incomplete, where("status_id IS NOT #{STATUS_CODES[:finished]}")
+  scope :incomplete, where("status_id != #{STATUS_CODES[:finished]}")
 
   def status
     STATUS_CODES.invert[status_id]
