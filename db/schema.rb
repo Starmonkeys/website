@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110703033449) do
+ActiveRecord::Schema.define(:version => 20110717002423) do
 
   create_table "comments", :force => true do |t|
     t.string   "text"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(:version => 20110703033449) do
     t.integer  "author_id"
     t.integer  "owner_id"
     t.integer  "project_id"
-    t.datetime "done"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "use_case_id"
+    t.integer  "status_id"
   end
 
   create_table "use_cases", :force => true do |t|
